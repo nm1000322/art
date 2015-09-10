@@ -1,0 +1,54 @@
+<html>
+<head>
+  <title>Alia's Art</title>
+  <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
+  <link rel="stylesheet" href="/css/css.css">
+</head>
+</body>
+<div class="ui sidebar inverted vertical menu">
+  <a href="/" class="item">
+    Home
+  </a>
+  <a href="/gallery" class="item">
+    Gallery
+  </a>
+  <a href="/about" class="item">
+    About Me
+  </a>
+  <a href="/theater" class="item">
+    Theater
+  </a>
+  <%if session[:visited]%>
+  <a href="/logout" class="item">Logout</a>
+  <div class="item">Welcome, <%=@user.username%></div>
+  <%else%>
+      <a class="item" id="login"> Login</a>
+      <div class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+          Login
+        </div>
+        <div class="description">
+          <div class="ui header"><strong>Please login if you are an administratior, if not, please head to the gallery to enjoy some art!</strong>
+            </p>
+            <form method="post" action="/user/auth">
+              Username: <div class="ui input"><input type="text" name="username" placeholder="Username"  required></div><br><br>
+              Password: <div class="ui input"><input class="ui input" type="password" name="password" placeholder="Password" required></div><br><br>
+              <button class="ui button" type="submit">Sign in</button>
+            </form>
+          </div>
+        </div>
+      </div>
+<%end%>
+</div>
+<div class="dimmed pusher">
+  <button class="ui grey basic button" id="menu"><i class="chevron right icon"></i> Menu</button>
+        <%=yield%>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="/semantic/dist/semantic.min.js"></script>
+<script src="/js/js.js?<%= rand(100000) %>"></script>
+</body>
+</html>
+
+

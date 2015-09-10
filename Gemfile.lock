@@ -2,6 +2,9 @@ GEM
   remote: http://rubygems.org/
   specs:
     bcrypt (3.1.10-x64-mingw32)
+    passenger (5.0.18)
+      rack
+      rake (>= 0.8.1)
     pg (0.18.2-x64-mingw32)
     rack (1.6.4)
     rack-protection (1.5.3)
@@ -20,6 +23,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt
+  passenger
   pg
   rake
   sequel

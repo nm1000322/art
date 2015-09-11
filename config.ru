@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'bundler'
-Bundle.require
+Bundler.require
 
 include BCrypt
 

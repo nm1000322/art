@@ -3,19 +3,24 @@
   <title>Alia's Art</title>
   <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
   <link rel="stylesheet" href="/css/css.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
 </head>
 </body>
-<div class="ui sidebar inverted vertical menu">
+<div class="ui sidebar inverted vertical labeled icon menu">
   <a href="/" class="item">
+    <i class="home icon"></i>
     Home
   </a>
   <a href="/gallery" class="item">
+    <i class="paint brush icon"></i>
     Gallery
   </a>
   <a href="/about" class="item">
+    <i class="smile icon"></i>
     About Me
   </a>
   <a href="/theater" class="item">
+    <i class="film icon"></i>
     Theater
   </a>
   <%if session[:visited]%>
@@ -29,7 +34,7 @@
           Login
         </div>
         <div class="description">
-          <div class="ui header"><strong>Please login if you are an administratior, if not, please head to the gallery to enjoy some art!</strong>
+          <div class="ui header">Please login if you are an administratior, if not, please head to the gallery to enjoy some art!
             </p>
             <form method="post" action="/user/auth">
               Username: <div class="ui input"><input type="text" name="username" placeholder="Username"  required></div><br><br>
@@ -42,7 +47,7 @@
 <%end%>
 </div>
 <div class="dimmed pusher">
-  <button class="ui grey basic button" id="menu"><i class="chevron right icon"></i> Menu</button>
+  <a class="ui massive icon button" id="menu"><i class="sidebar icon"></i></a>
         <%=yield%>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

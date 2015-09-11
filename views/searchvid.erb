@@ -1,19 +1,26 @@
 <div class="title">Alia's Theater</div><br><br>
 
 
-<div class="ui two column centered grid">
+<div class="ui fifteen column grid">
   <div class="two wide column"></div>
-  <div class="two wide column">
-<div class="search">
-<form class="ui small form" action="/searchvid" method="post">
-  <div class="field">
-    <input type="text" name="tag" placeholder="Search by Tag">
-  </div>
-  <button class="ui green button"type="submit" name="push">Search</button>
-</form>
-</div>
+  <div class="two wide column"></div>
+  <div class="two wide column"></div>
+  <div class="three wide column">
+    <div class="search">
+      <form class="ui small form" action="/searchvid" method="post">
+        <div class="field">
+          <input type="text" name="tag" placeholder="Search by Tag">
+        </div>
+        <button class="ui green button"type="submit" name="push">Search</button>
+      </form>
+      <br>
+      <a class="ui orange button" href="/theater">Back to full Theater</a>
+    </div>
   </div>
   <div class="two wide column"></div>
+  <div class="two wide column"></div>
+  <div class="two wide column"></div>
+
 </div>
 
 
@@ -50,7 +57,7 @@
 
           <div class="content">
             <a >
-              <a class="header"><%=video.name%></a>
+              <a class="header" href><%=video.name%></a>
             </a>
             <!--        <div class="meta">
                       <span class="date">Joined in 2013</span>

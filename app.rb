@@ -56,20 +56,26 @@ get '/theater' do
   @video = Video.all
   erb :theater
 end
+get '/video/:id' do
+  @user = User.first(:id => session[:id])
+  @i=Video.first(:id=>params[:id])
+  erb :video
+end
 #######################################
 
 post '/search' do
   puts params[:tag].inspect
   @user = User.first(:id => session[:id])
   @image = Image.where(:tag => params[:tag])
-  erb :gallery
+  erb :search
+  #or gallery depending of which on is cleaner
 end
 
 post '/searchvid' do
   puts params[:tag].inspect
   @user = User.first(:id => session[:id])
   @video = Video.where(:tag => params[:tag])
-  erb :theater
+  erb :searchvid
 end
 
 post '/user/create' do
@@ -93,11 +99,14 @@ post '/user/auth' do
 end
 
 post '/uploading' do
+  time = Time.new
   i = Image.new
+  @t = time.strftime("Posted on %A, %b %d %Y")
   i.name = params[:name]
   i.url = params[:url]
   i.tag = params[:tag]
   i.caption = params[:caption]
+  i.date = time
   i.save
   redirect '/gallery'
 end

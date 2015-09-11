@@ -16,6 +16,7 @@ $("#addimage").click(function() {
       .modal('show')
   ;
 })
+
 /*
 function homepage(){
   $('div#sections section').hide();

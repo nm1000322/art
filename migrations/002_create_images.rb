@@ -7,6 +7,7 @@ Sequel.migration do
       String :url
       String :tag
       String :caption
+      Time :date
 
 
     end

@@ -1,7 +1,11 @@
-<br><div>   </div><div class="title">Alia's Gallery</div><br><br>
+<div class="title">Alia's Gallery</div>
 
-
-<div class="ui two column centered grid">
+<div class="ui fifteen column grid">
+  <div class="two wide column"></div>
+  <div class="two wide column"></div>
+  <div class="two wide column"></div>
+  <div class="three wide column">
+  </div>
   <div class="two wide column"></div>
   <div class="two wide column">
     <div class="search">
@@ -10,17 +14,16 @@
           <input type="text" name="tag" placeholder="Search by Tag">
         </div>
         <button class="ui green button"type="submit" name="push">Search</button>
-      </form>
+      </form><br>
+      <a class="ui orange button" href="/gallery">Back to Gallery</a>
     </div>
   </div>
   <div class="two wide column"></div>
-</div>
-
 
 </div>
 <%if session[:visited]%>
     <div class="title">
-<button class="ui button" id="addimage">Add Image</button></div><br>
+      <button class="ui button" id="addimage">Add Image</button></div><br>
     <div class="ui modal">
       <div class="header">Add Image</div>
       <div class="content">
@@ -41,33 +44,33 @@
 <%end%>
 <div class="ui centered stackable five column grid">
 
-<% @image.each do |image|%>
-   <div class="column">
-    <div class="ui card">
-      <a class="image" href="/image/<%=image.id%>">
-        <img src="<%=image.url %>">
-      </a>
-
-      <div class="content">
-        <a >
-        <a class="header"><%=image.name%></a>
+  <% @image.each do |image|%>
+      <div class="column">
+        <div class="ui card">
+          <a class="image" href="/image/<%=image.id%>">
+            <img src="<%=image.url %>">
           </a>
-<!--        <div class="meta">
-          <span class="date"><%=image.date.strftime("Image posted on %A, %b %d %Y")%></span>
-        </div>-->
-        <div class="description">
-          <%=image.caption%>
+
+          <div class="content">
+            <a >
+              <a class="header"><%=image.name%></a>
+            </a>
+            <!--        <div class="meta">
+                      <span class="date">Joined in 2013</span>
+                    </div>-->
+            <div class="description">
+              <%=image.caption%>
+            </div>
+          </div>
+
+          <div class="extra content">
+            <a>
+              <%=image.tag%>
+            </a>
+          </div>
         </div>
       </div>
 
-      <div class="extra content">
-        <a>
-          <%=image.tag%>
-        </a>
-      </div>
-    </div>
-      </div>
-
-<%end%>
+  <%end%>
 
 </div>

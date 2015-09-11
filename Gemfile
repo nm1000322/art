@@ -4,7 +4,7 @@ gem 'sinatra'
 gem 'rake'
 
 
-gem 'sqlite3'
+#gem 'sqlite3'
 
 gem 'sequel'
 gem 'pg'
